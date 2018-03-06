@@ -18,14 +18,14 @@
 #include <TheThingsNetwork.h>
 
 // Set your AppEUI and AppKey
-const char *appEui = "70B3D57ED000A934";
-const char *appKey = "D74CB90A6EC9242450F908A44446B290";
+const char *appEui = "0000000000000000";
+const char *appKey = "00000000000000000000000000000000";
 
 #define loraSerial Serial2
 #define debugSerial SerialUSB
 
 // Replace REPLACE_ME with TTN_FP_EU868 or TTN_FP_US915
-#define freqPlan TTN_FP_EU868
+#define freqPlan REPLACE_ME
 
 TheThingsNetwork ttn(loraSerial, debugSerial, freqPlan);
 uint8_t color = 0;
