@@ -1,3 +1,20 @@
+/*
+ Payload format
+ 
+  function Decoder(bytes, port) {
+  var colors = ["white", "red", "green", "blue"];
+  var decoded = {
+    temperature: ((bytes[0] << 8) | bytes[1]) / 100,
+    state: {
+      color: colors[bytes[2]]
+    }
+  };
+
+  return decoded;
+}
+*/
+
+
 #include <TheThingsNetwork.h>
 
 // Set your AppEUI and AppKey
