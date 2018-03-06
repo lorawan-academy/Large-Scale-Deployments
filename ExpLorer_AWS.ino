@@ -1,17 +1,30 @@
 /*
- Payload format
+Payload format - decoder
  
-  function Decoder(bytes, port) {
+function Decoder(bytes, port) {
+  var temperature = ((bytes[0] << 8) | bytes[1]) / 100;
   var colors = ["white", "red", "green", "blue"];
-  var decoded = {
-    temperature: ((bytes[0] << 8) | bytes[1]) / 100,
+  var color = colors[bytes[2]];
+  
+  return {
+    temperature: temperature,
     state: {
-      color: colors[bytes[2]]
+      color: color
     }
   };
-
-  return decoded;
 }
+
+Payload format - encoder
+
+function Encoder(object, port) {
+  var colors = ["white", "red", "green", "blue"];
+  var bytes = [];
+  if (object.state && object.state.color) {
+    bytes.push(colors.indexOf(object.state.color));
+  }
+  return bytes;
+}
+
 */
 
 
